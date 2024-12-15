@@ -1,12 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, User
-from django.db.models.signals import post_save
-from django.utils.text import slugify
+# from django.contrib.auth.models import AbstractBaseUser, User
+# from django.db.models.signals import post_save
+# from django.utils.text import slugify
 
 # Create your models here.
 
 class profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.CharField(max_length=100 ,null=True, blank=True)
     image = models.FileField(upload_to='image')
     full_name = models.CharField(max_length=100 ,null=True, blank=True)
     boi = models.CharField(max_length=100 ,null=True, blank=True)
